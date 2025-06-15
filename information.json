@@ -1,0 +1,9 @@
+{
+    "Acer Palmatum": ["fall", "small", "ornamental", "deciduous", "asia", "old", "industrial", "medicinal", "tropical", "heat", "evergreen"],
+    "Cedrus Deodara": ["poisonous", "evergreen", "ornamental", "old", "big", "cold", "rot-resistant", "flower", "asia"],
+    "Cercis Chinensis": ["poisonous", "fall", "flower", "deciduous", "big", "old", "medicinal", "dry", "rot-resistant"],
+    "Citrus Reticulata Blanco": ["small", "fruit", "evergreen", "rot-resistant", "old"],
+    "Ginkgo Biloba": ["asia", "fall", "fan-shape", "old", "big", "dry"],
+    "Liriodendron Chinense": ["fall", "flowers", "deciduous", "tropical", "old", "big", "asia"],
+    "Nerium Oleander": ["evergreen", "small", "mediterranean", "dry", "poisonous", "old"]
+  }

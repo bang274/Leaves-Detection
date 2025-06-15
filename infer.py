@@ -3,6 +3,7 @@ import sys
 import numpy as np
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from train import create_model
+import json 
 
 def preprocess_image(image_path, target_size=(225, 225)):
     try:
@@ -16,13 +17,15 @@ def preprocess_image(image_path, target_size=(225, 225)):
         sys.exit(2)
 
 def main():
+    with open('information.json', 'r') as f:
+        info = json.load(f)
     if len(sys.argv) != 2:
         print("Usage: python infer.py <image_path>", file=sys.stderr)
         sys.exit(2)
 
     image_path = sys.argv[1]
-    labels = ['Acer Palmatum', 'Acer Rubrum', 'Aesculus Hippocastanum', 'Betula Pendula', 
-              'Fagus Sylvatica', 'Quercus Robur', 'Tilia Cordata']
+    labels = ['Acer Palmatum', 'Cedrus Deodara', 'Cercis Chinensis', 'Citrus Reticulata Blanco', 
+              'Ginkgo Biloba', 'Liriodendron Chinense', 'Nerium Oleander']
 
     try:
         # Load model and weights
@@ -37,7 +40,7 @@ def main():
         # Output JSON
         result = {
             "leaf_type": predicted_class,
-            "features": ["poisionous", "round shape"]  # Empty features array as per app expectation
+            "features": info[predicted_class]  # Empty features array as per app expectation
         }
         print(json.dumps(result))
     except Exception as e:
